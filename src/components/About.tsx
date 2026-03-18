@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEditor } from '../context/EditorContext';
-import { User, Code, PenTool, Database } from 'lucide-react';
+import * as LucideIcons from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
 const About = () => {
@@ -10,6 +10,23 @@ const About = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     updateSection('about', { ...about, [name]: value });
+  };
+
+  const handleRoleChange = (index: number, field: 'icon' | 'label', value: string) => {
+    const newRoles = [...(about.roles || [])];
+    if (!newRoles[index]) return;
+    newRoles[index] = { ...newRoles[index], [field]: value };
+    updateSection('about', { ...about, roles: newRoles });
+  };
+
+  // Helper to dynamically render Lucide icon
+  const renderIcon = (iconName: string, size: number = 20) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const IconComponent = (LucideIcons as any)[iconName];
+    if (!IconComponent) {
+      return <LucideIcons.HelpCircle size={size} />;
+    }
+    return <IconComponent size={size} />;
   };
 
   return (
@@ -78,15 +95,36 @@ const About = () => {
             </div>
 
             <div className="grid grid-cols-2 gap-4 mt-6">
-              {[
-                { icon: <PenTool size={20} />, label: "시스템 기획" },
-                { icon: <Database size={20} />, label: "데이터 밸런싱" },
-                { icon: <Code size={20} />, label: "스크립팅" },
-                { icon: <User size={20} />, label: "UI/UX 기획" },
-              ].map((item, idx) => (
+              {(about.roles || [
+                { icon: "PenTool", label: "시스템 기획" },
+                { icon: "Database", label: "데이터 밸런싱" },
+                { icon: "Code", label: "스크립팅" },
+                { icon: "User", label: "UI/UX 기획" },
+              ]).map((item, idx) => (
                 <div key={idx} className="flex items-center gap-3 text-sm md:text-base text-slate-400 font-medium">
-                  <span className="text-sky-500">{item.icon}</span>
-                  {item.label}
+                  <span className="text-sky-500 shrink-0">
+                    {renderIcon(item.icon)}
+                  </span>
+                  {isEditing ? (
+                    <div className="flex flex-col gap-1 w-full">
+                      <input
+                        type="text"
+                        value={item.icon}
+                        onChange={(e) => handleRoleChange(idx, 'icon', e.target.value)}
+                        placeholder="Icon Name (e.g. User)"
+                        className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xs text-slate-300 focus:outline-none focus:border-sky-500"
+                        title="Lucide Icon Name"
+                      />
+                      <input
+                        type="text"
+                        value={item.label}
+                        onChange={(e) => handleRoleChange(idx, 'label', e.target.value)}
+                        className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-slate-300 focus:outline-none focus:border-sky-500"
+                      />
+                    </div>
+                  ) : (
+                    item.label
+                  )}
                 </div>
               ))}
             </div>
@@ -101,14 +139,28 @@ const About = () => {
           >
             {/* Image Placeholder Frame */}
             <div className="absolute inset-0 border-2 border-sky-500/50 rounded-xl translate-x-4 translate-y-4 -z-10 transition-transform duration-300 group-hover:translate-x-3 group-hover:translate-y-3"></div>
-            <div className="relative aspect-square md:aspect-[3/4] bg-slate-800 rounded-xl overflow-hidden border border-slate-700/50 shadow-2xl flex items-center justify-center filter grayscale hover:grayscale-0 transition-all duration-500">
-              <div className="absolute inset-0 bg-sky-900/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-300 z-10"></div>
-              {/* Replace src with real image later */}
+
+            <div className="relative aspect-square md:aspect-[3/4] bg-slate-800 rounded-xl overflow-hidden border border-slate-700/50 shadow-2xl flex flex-col filter grayscale hover:grayscale-0 transition-all duration-500">
+              <div className="absolute inset-0 bg-sky-900/20 mix-blend-multiply group-hover:opacity-0 transition-opacity duration-300 z-10 pointer-events-none"></div>
+
               <img
-                src="https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2070&auto=format&fit=crop"
-                alt="Profile Placeholder"
+                src={about.imageUrl || "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2070&auto=format&fit=crop"}
+                alt="Profile"
                 className="w-full h-full object-cover"
               />
+
+              {isEditing && (
+                <div className="absolute top-4 left-4 right-4 z-20">
+                  <input
+                    type="text"
+                    name="imageUrl"
+                    value={about.imageUrl || ''}
+                    onChange={handleChange}
+                    placeholder="Image URL"
+                    className="w-full bg-slate-900/80 border border-slate-600 rounded px-3 py-2 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-sky-500"
+                  />
+                </div>
+              )}
             </div>
           </motion.div>
         </div>
