@@ -4,6 +4,7 @@ import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import FloatingEditorButton from './components/FloatingEditorButton';
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
           <p>© {new Date().getFullYear()} 홍길동. All rights reserved.</p>
         </div>
       </footer>
+
+      <FloatingEditorButton />
     </div>
   );
 }
