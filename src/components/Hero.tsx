@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { ChevronDown, FileText } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const Hero = () => {
   return (
@@ -37,14 +38,14 @@ const Hero = () => {
           <span className="block text-slate-400 text-3xl sm:text-4xl md:text-5xl mt-2">입니다.</span>
         </motion.h1>
 
-        <motion.p
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-2xl text-lg sm:text-xl text-slate-400 mt-4 leading-relaxed"
+          className="max-w-2xl text-lg sm:text-xl text-slate-400 mt-4 leading-relaxed prose prose-invert prose-slate prose-a:text-sky-400 prose-lg max-w-none"
         >
-          {portfolioData.hero.description}
-        </motion.p>
+          <ReactMarkdown>{portfolioData.hero.description}</ReactMarkdown>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
