@@ -1,0 +1,84 @@
+import { motion } from 'framer-motion';
+import { portfolioData } from '../data/portfolioData';
+import { ChevronDown, FileText } from 'lucide-react';
+
+const Hero = () => {
+  return (
+    <section
+      id="home"
+      className="relative h-screen min-h-[600px] flex items-center justify-center pt-20 px-6 sm:px-12 md:px-24 bg-slate-900"
+    >
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800 via-slate-900 to-slate-950 opacity-50"></div>
+        {/* Subtle grid pattern background */}
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
+      </div>
+
+      <div className="container max-w-5xl mx-auto z-10 flex flex-col items-start gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-sky-400 font-semibold tracking-wider text-sm md:text-base uppercase"
+        >
+          {portfolioData.header.jobTitle}
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="text-4xl sm:text-5xl md:text-7xl font-bold leading-tight tracking-tighter text-slate-100"
+        >
+          <span className="block">{portfolioData.hero.greeting.split("게임 기획자")[0]}</span>
+          <span className="block text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-500">
+            게임 기획자 홍길동
+          </span>
+          <span className="block text-slate-400 text-3xl sm:text-4xl md:text-5xl mt-2">입니다.</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="max-w-2xl text-lg sm:text-xl text-slate-400 mt-4 leading-relaxed"
+        >
+          {portfolioData.hero.description}
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="flex flex-wrap gap-4 mt-8"
+        >
+          <a
+            href="#projects"
+            className="px-8 py-3 rounded-full bg-sky-500 text-slate-950 font-bold hover:bg-sky-400 transition-colors flex items-center gap-2"
+          >
+            프로젝트 보기
+          </a>
+          <a
+            href="#contact"
+            className="px-8 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2"
+          >
+            <FileText size={18} />
+            이력서 다운로드
+          </a>
+        </motion.div>
+      </div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: [0, 10, 0] }}
+        transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hidden md:flex flex-col items-center gap-2"
+      >
+        <span className="text-xs uppercase tracking-widest font-medium">Scroll Down</span>
+        <ChevronDown size={20} />
+      </motion.div>
+    </section>
+  );
+};
+
+export default Hero;
