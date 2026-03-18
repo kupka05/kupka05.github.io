@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: your-username/your-repo-name # IMPORTANT: Replace this with your actual GitHub username and repository name
+  repo: kupka05/kupka05.github.io # IMPORTANT: Replace this with your actual GitHub username and repository name
   branch: main # Branch to update (optional; defaults to master)
 
 media_folder: "public/uploads"
