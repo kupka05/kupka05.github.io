@@ -19,68 +19,11 @@ export interface Skill {
   category: 'Engine' | 'Scripting' | 'Tools' | 'Other';
 }
 
+import portfolioJsonData from './portfolio.json';
+
+// We explicitly cast the imported JSON to the expected structure
 export const portfolioData = {
-  header: {
-    name: "홍길동",
-    jobTitle: "게임 기획자 (Game Designer)",
-  },
-  hero: {
-    greeting: "안녕하세요, 재미를 설계하는 게임 기획자 홍길동입니다.",
-    description: "유저의 경험을 최우선으로 생각하며, 매력적인 세계와 짜임새 있는 시스템을 구축합니다.",
-  },
-  about: {
-    title: "About Me",
-    content: "저는 3년 차 게임 기획자로서 다양한 장르의 프로젝트에서 시스템 기획, 레벨 디자인, 밸런싱을 경험했습니다. 데이터에 기반한 의사결정과 원활한 커뮤니케이션을 통해 팀의 비전을 현실로 만드는 것을 목표로 합니다. 특히 유저가 게임의 핵심 루프에 몰입할 수 있도록 돕는 디테일한 레벨 디자인에 관심이 많습니다.",
-  },
-  skills: [
-    { name: "Unity", level: "상", category: "Engine" },
-    { name: "Unreal Engine", level: "중", category: "Engine" },
-    { name: "Lua", level: "중", category: "Scripting" },
-    { name: "Blueprint", level: "상", category: "Scripting" },
-    { name: "C#", level: "하", category: "Scripting" },
-    { name: "Jira / Confluence", level: "상", category: "Tools" },
-    { name: "Excel (VBA)", level: "상", category: "Tools" },
-  ] as Skill[],
-  projects: [
-    {
-      id: "project-1",
-      title: "Project Alpha",
-      genre: "Action RPG",
-      role: "메인 시스템 기획, 전투 밸런싱",
-      period: "2023.01 - 2024.02",
-      description: "핵앤슬래시 스타일의 액션 RPG 프로젝트입니다. 플레이어의 성장에 따른 전투 밸런싱을 담당했으며, 보스 몬스터의 패턴 및 기믹 기획을 메인으로 진행했습니다.",
-      imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
-      links: {
-        video: "https://youtube.com",
-      }
-    },
-    {
-      id: "project-2",
-      title: "Project Beta",
-      genre: "Casual Puzzle",
-      role: "레벨 디자인",
-      period: "2022.05 - 2022.12",
-      description: "모바일 캐주얼 퍼즐 게임. 100개 이상의 스테이지 레벨을 직접 디자인하고 난이도 곡선을 설계했습니다.",
-      imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop",
-      links: {
-        play: "https://play.google.com",
-        github: "https://github.com",
-      }
-    },
-    {
-      id: "project-3",
-      title: "Project Gamma",
-      genre: "Turn-based Strategy",
-      role: "UI/UX 기획, 시나리오 스크립팅",
-      period: "2021.08 - 2022.04",
-      description: "턴제 텍스트 어드벤처 및 전략 게임. 유저 인터페이스의 플로우를 설계하고 Lua를 활용한 인게임 이벤트 스크립팅을 담당했습니다.",
-      imageUrl: "https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2070&auto=format&fit=crop",
-    }
-  ] as Project[],
-  contact: {
-    email: "gamedesigner@example.com",
-    phone: "010-1234-5678",
-    github: "https://github.com",
-    linkedin: "https://linkedin.com",
-  }
+  ...portfolioJsonData,
+  skills: portfolioJsonData.skills as Skill[],
+  projects: portfolioJsonData.projects as Project[]
 };
