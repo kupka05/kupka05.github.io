@@ -1,11 +1,17 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { portfolioData } from '../data/portfolioData';
+import { useEditor } from '../context/EditorContext';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const { isEditing, data, updateSection } = useEditor();
+  const { header } = data;
+
+  const handleNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateSection('header', { ...header, name: e.target.value });
+  };
 
   const navLinks = [
     { name: 'Home', href: '#home' },
@@ -34,9 +40,22 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#home" className="text-xl md:text-2xl font-bold tracking-tighter text-white">
-          {portfolioData.header.name} <span className="text-sky-400">.</span>
-        </a>
+        {isEditing ? (
+          <div className="flex items-center">
+            <input
+              type="text"
+              name="name"
+              value={header.name}
+              onChange={handleNameChange}
+              className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xl md:text-2xl font-bold tracking-tighter text-white focus:outline-none focus:border-sky-500 w-32"
+            />
+            <span className="text-sky-400 text-xl md:text-2xl font-bold">.</span>
+          </div>
+        ) : (
+          <a href="#home" className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+            {header.name} <span className="text-sky-400">.</span>
+          </a>
+        )}
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-8">

@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
-import { portfolioData } from '../data/portfolioData';
+import { useEditor } from '../context/EditorContext';
 import { Mail, Phone, Github, Linkedin, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
+  const { isEditing, data, updateSection } = useEditor();
+  const { contact } = data;
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    updateSection('contact', { ...contact, [e.target.name]: e.target.value });
+  };
+
   return (
     <section id="contact" className="py-24 md:py-32 px-6 sm:px-12 md:px-24 bg-slate-900 relative">
       <div className="container max-w-4xl mx-auto flex flex-col items-center gap-12 z-10 relative">
@@ -20,7 +27,7 @@ const Contact = () => {
             언제든지 편하게 연락 주시면 확인 후 답변드리겠습니다.
           </p>
           <a
-            href={`mailto:${portfolioData.contact.email}`}
+            href={`mailto:${contact.email}`}
             className="px-8 py-4 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/30 font-bold hover:bg-sky-500 hover:text-slate-950 transition-all duration-300 flex items-center gap-3 text-lg group"
           >
             <MessageSquare size={20} className="group-hover:animate-bounce" />
@@ -33,27 +40,48 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="flex flex-wrap justify-center gap-6 md:gap-12 mt-8 w-full max-w-2xl border-t border-slate-800 pt-12"
+          className="flex flex-col md:flex-row flex-wrap justify-center gap-6 md:gap-12 mt-8 w-full max-w-2xl border-t border-slate-800 pt-12"
         >
-          {[
-            { icon: <Mail size={24} />, label: portfolioData.contact.email, href: `mailto:${portfolioData.contact.email}` },
-            { icon: <Phone size={24} />, label: portfolioData.contact.phone, href: `tel:${portfolioData.contact.phone.replace(/-/g, '')}` },
-            { icon: <Github size={24} />, label: "GitHub", href: portfolioData.contact.github },
-            { icon: <Linkedin size={24} />, label: "LinkedIn", href: portfolioData.contact.linkedin },
-          ].map((item, idx) => (
-            <a
-              key={idx}
-              href={item.href}
-              target={item.href.startsWith('http') ? '_blank' : undefined}
-              rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-              className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors"
-            >
-              <div className="p-3 rounded-full bg-slate-800 border border-slate-700">
-                {item.icon}
+          {isEditing ? (
+            <div className="flex flex-col gap-4 w-full">
+              <div className="flex items-center gap-4">
+                <Mail size={24} className="text-slate-400" />
+                <input type="email" name="email" value={contact.email} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Email" />
               </div>
-              <span className="font-medium hidden sm:block">{item.label}</span>
-            </a>
-          ))}
+              <div className="flex items-center gap-4">
+                <Phone size={24} className="text-slate-400" />
+                <input type="text" name="phone" value={contact.phone} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Phone" />
+              </div>
+              <div className="flex items-center gap-4">
+                <Github size={24} className="text-slate-400" />
+                <input type="url" name="github" value={contact.github} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="GitHub URL" />
+              </div>
+              <div className="flex items-center gap-4">
+                <Linkedin size={24} className="text-slate-400" />
+                <input type="url" name="linkedin" value={contact.linkedin} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="LinkedIn URL" />
+              </div>
+            </div>
+          ) : (
+            [
+              { icon: <Mail size={24} />, label: contact.email, href: `mailto:${contact.email}` },
+              { icon: <Phone size={24} />, label: contact.phone, href: `tel:${contact.phone.replace(/-/g, '')}` },
+              { icon: <Github size={24} />, label: "GitHub", href: contact.github },
+              { icon: <Linkedin size={24} />, label: "LinkedIn", href: contact.linkedin },
+            ].map((item, idx) => (
+              <a
+                key={idx}
+                href={item.href}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors"
+              >
+                <div className="p-3 rounded-full bg-slate-800 border border-slate-700">
+                  {item.icon}
+                </div>
+                <span className="font-medium hidden sm:block">{item.label}</span>
+              </a>
+            ))
+          )}
         </motion.div>
       </div>
     </section>
