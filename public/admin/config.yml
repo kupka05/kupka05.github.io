@@ -3,7 +3,7 @@ backend:
   repo: kupka05/kupka05.github.io # IMPORTANT: Replace this with your actual GitHub username and repository name
   branch: main # Branch to update (optional; defaults to master)
   use_pkce: true # Enable PKCE for GitHub Pages without an external OAuth server
-  app_id: YOUR_GITHUB_OAUTH_APP_ID # IMPORTANT: Replace with the Client ID of your GitHub OAuth App
+  app_id: Ov23liCUq6g7nyoP6GaP # IMPORTANT: Replace with the Client ID of your GitHub OAuth App
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
