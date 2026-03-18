@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { portfolioData, type Project } from '../data/portfolioData';
 import { ExternalLink, Play, Github } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   return (
@@ -49,9 +50,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
 
         <p className="text-sm font-mono text-slate-500 mt-2 mb-4">{project.period}</p>
 
-        <p className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 flex-1">
-          {project.description}
-        </p>
+        <div className="text-slate-300 text-sm md:text-base leading-relaxed mb-6 flex-1 prose prose-invert prose-slate prose-a:text-sky-400 prose-sm max-w-none">
+          <ReactMarkdown>{project.description}</ReactMarkdown>
+        </div>
 
         <div className="mt-auto">
           <div className="text-sm font-medium text-slate-400 flex items-center gap-2">

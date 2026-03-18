@@ -2,6 +2,8 @@ backend:
   name: github
   repo: kupka05/kupka05.github.io # IMPORTANT: Replace this with your actual GitHub username and repository name
   branch: main # Branch to update (optional; defaults to master)
+  use_pkce: true # Enable PKCE for GitHub Pages without an external OAuth server
+  app_id: YOUR_GITHUB_OAUTH_APP_ID # IMPORTANT: Replace with the Client ID of your GitHub OAuth App
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -20,11 +22,11 @@ collections:
             ]}
           - {label: "Hero", name: "hero", widget: "object", fields: [
               {label: "Greeting", name: "greeting", widget: "string"},
-              {label: "Description", name: "description", widget: "text"}
+              {label: "Description", name: "description", widget: "markdown"}
             ]}
           - {label: "About", name: "about", widget: "object", fields: [
               {label: "Title", name: "title", widget: "string"},
-              {label: "Content", name: "content", widget: "text"}
+              {label: "Content", name: "content", widget: "markdown"}
             ]}
           - {label: "Skills", name: "skills", widget: "list", fields: [
               {label: "Name", name: "name", widget: "string"},
@@ -37,7 +39,7 @@ collections:
               {label: "Genre", name: "genre", widget: "string"},
               {label: "Role", name: "role", widget: "string"},
               {label: "Period", name: "period", widget: "string"},
-              {label: "Description", name: "description", widget: "text"},
+              {label: "Description", name: "description", widget: "markdown"},
               {label: "Image URL", name: "imageUrl", widget: "image"},
               {label: "Links", name: "links", widget: "object", required: false, fields: [
                 {label: "Play Link", name: "play", widget: "string", required: false},

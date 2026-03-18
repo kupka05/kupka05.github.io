@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { portfolioData } from '../data/portfolioData';
 import { User, Code, PenTool, Database } from 'lucide-react';
+import ReactMarkdown from 'react-markdown';
 
 const About = () => {
   return (
@@ -30,15 +31,23 @@ const About = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="flex flex-col gap-6 text-slate-300 text-base md:text-lg leading-relaxed"
           >
-            <p>
-              안녕하세요! 저는 데이터를 기반으로 유저 경험을 설계하는 <span className="text-sky-400 font-semibold">게임 기획자</span>입니다.
-            </p>
-            <p>
-              3년 동안 다양한 장르(RPG, 퍼즐, 전략)의 게임을 개발하며 시스템 기획부터 레벨 디자인, 그리고 밸런싱까지 다방면의 경험을 쌓았습니다. 단순히 기획서를 작성하는 것을 넘어, 팀원들과 끊임없이 소통하며 완성도 높은 게임을 만드는 과정 자체를 즐깁니다.
-            </p>
-            <p>
-              현재는 유저가 게임의 핵심 루프에 자연스럽게 몰입할 수 있도록 돕는 <span className="text-slate-100 font-medium">디테일한 레벨 디자인</span>과 <span className="text-slate-100 font-medium">정교한 밸런싱 구조</span>를 설계하는 데 큰 관심을 두고 있습니다.
-            </p>
+            <div className="prose prose-invert prose-slate prose-a:text-sky-400 max-w-none prose-p:mb-4">
+              {portfolioData.about.content ? (
+                <ReactMarkdown>{portfolioData.about.content}</ReactMarkdown>
+              ) : (
+                <>
+                  <p>
+                    안녕하세요! 저는 데이터를 기반으로 유저 경험을 설계하는 <span className="text-sky-400 font-semibold">게임 기획자</span>입니다.
+                  </p>
+                  <p>
+                    3년 동안 다양한 장르(RPG, 퍼즐, 전략)의 게임을 개발하며 시스템 기획부터 레벨 디자인, 그리고 밸런싱까지 다방면의 경험을 쌓았습니다. 단순히 기획서를 작성하는 것을 넘어, 팀원들과 끊임없이 소통하며 완성도 높은 게임을 만드는 과정 자체를 즐깁니다.
+                  </p>
+                  <p>
+                    현재는 유저가 게임의 핵심 루프에 자연스럽게 몰입할 수 있도록 돕는 <span className="text-slate-100 font-medium">디테일한 레벨 디자인</span>과 <span className="text-slate-100 font-medium">정교한 밸런싱 구조</span>를 설계하는 데 큰 관심을 두고 있습니다.
+                  </p>
+                </>
+              )}
+            </div>
 
             <div className="grid grid-cols-2 gap-4 mt-6">
               {[
