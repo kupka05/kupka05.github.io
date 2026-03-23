@@ -40,6 +40,7 @@ const Hero = () => {
               name="jobTitle"
               value={header.jobTitle}
               onChange={handleChange}
+              aria-label="Job title"
               className="w-full bg-slate-800/50 border border-slate-700 rounded px-3 py-1 text-sky-400 focus:outline-none focus:border-sky-500"
             />
           ) : (
@@ -58,6 +59,7 @@ const Hero = () => {
               name="greeting"
               value={hero.greeting}
               onChange={handleChange}
+              aria-label="Greeting"
               className="w-full bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-100 focus:outline-none focus:border-sky-500 min-h-[120px]"
             />
           ) : (
@@ -82,6 +84,7 @@ const Hero = () => {
               name="description"
               value={hero.description}
               onChange={handleChange}
+              aria-label="Description"
               className="w-full bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-400 focus:outline-none focus:border-sky-500 min-h-[150px]"
             />
           ) : (

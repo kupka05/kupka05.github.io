@@ -85,6 +85,8 @@ const FloatingEditorButton = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close editor menu" : "Open editor menu"}
+        aria-expanded={isOpen}
         className={`p-4 rounded-full shadow-2xl text-white transition-colors flex items-center justify-center ${
           isEditing ? 'bg-amber-500 hover:bg-amber-400 text-slate-900' : 'bg-sky-500 hover:bg-sky-400'
         }`}

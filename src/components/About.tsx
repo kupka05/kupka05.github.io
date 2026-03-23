@@ -49,6 +49,7 @@ const About = () => {
               name="title"
               value={about.title}
               onChange={handleChange}
+              aria-label="About section title"
               className="w-full max-w-md bg-slate-800/50 border border-slate-700 rounded px-3 py-1 text-3xl md:text-5xl font-bold text-slate-100 focus:outline-none focus:border-sky-500"
             />
           ) : (
@@ -73,6 +74,7 @@ const About = () => {
                   name="content"
                   value={about.content || ''}
                   onChange={handleChange}
+                  aria-label="About section content"
                   className="w-full bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-300 focus:outline-none focus:border-sky-500 min-h-[250px]"
                 />
               ) : (
@@ -112,6 +114,7 @@ const About = () => {
                         value={item.icon}
                         onChange={(e) => handleRoleChange(idx, 'icon', e.target.value)}
                         placeholder="Icon Name (e.g. User)"
+                        aria-label={`Role ${idx + 1} icon name`}
                         className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xs text-slate-300 focus:outline-none focus:border-sky-500"
                         title="Lucide Icon Name"
                       />
@@ -119,6 +122,7 @@ const About = () => {
                         type="text"
                         value={item.label}
                         onChange={(e) => handleRoleChange(idx, 'label', e.target.value)}
+                        aria-label={`Role ${idx + 1} label`}
                         className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-slate-300 focus:outline-none focus:border-sky-500"
                       />
                     </div>
@@ -157,6 +161,7 @@ const About = () => {
                     value={about.imageUrl || ''}
                     onChange={handleChange}
                     placeholder="Image URL"
+                    aria-label="Profile image URL"
                     className="w-full bg-slate-900/80 border border-slate-600 rounded px-3 py-2 text-sm text-slate-100 placeholder:text-slate-400 focus:outline-none focus:border-sky-500"
                   />
                 </div>
