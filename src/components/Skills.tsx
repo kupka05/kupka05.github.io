@@ -49,6 +49,7 @@ const SkillBar = ({ skill, index, onUpdate }: { skill: Skill; index: number; onU
             type="text"
             value={skill.name}
             onChange={handleNameChange}
+            aria-label="Skill name"
             className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-sm md:text-base text-slate-200 focus:outline-none focus:border-sky-500 w-full max-w-[150px]"
           />
         ) : (
@@ -59,6 +60,7 @@ const SkillBar = ({ skill, index, onUpdate }: { skill: Skill; index: number; onU
           <select
             value={skill.level}
             onChange={handleLevelChange}
+            aria-label="Skill proficiency level"
             className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xs font-bold text-slate-400 focus:outline-none focus:border-sky-500"
           >
             <option value="상">상</option>

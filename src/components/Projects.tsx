@@ -31,6 +31,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
               value={project.imageUrl}
               onChange={handleChange}
               placeholder="Image URL"
+              aria-label="Project image URL"
               className="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-sm text-slate-300 focus:outline-none focus:border-sky-500"
             />
           </div>
@@ -47,6 +48,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
               name="genre"
               value={project.genre}
               onChange={handleChange}
+              aria-label="Project genre"
               className="bg-slate-900/80 backdrop-blur-sm rounded-full px-3 py-1 text-xs font-semibold text-sky-400 border border-sky-400/20 focus:outline-none focus:border-sky-500 max-w-[120px]"
             />
           ) : (
@@ -65,6 +67,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
               name="title"
               value={project.title}
               onChange={handleChange}
+              aria-label="Project title"
               className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-2xl font-bold text-slate-100 focus:outline-none focus:border-sky-500"
             />
           ) : (
@@ -97,6 +100,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
             name="period"
             value={project.period}
             onChange={handleChange}
+            aria-label="Project period"
             className="w-full bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-sm font-mono text-slate-500 mt-2 mb-4 focus:outline-none focus:border-sky-500"
           />
         ) : (
@@ -109,6 +113,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
               name="description"
               value={project.description}
               onChange={handleChange}
+              aria-label="Project description"
               className="w-full h-full min-h-[120px] bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-300 focus:outline-none focus:border-sky-500"
             />
           ) : (
@@ -126,6 +131,7 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
                 name="role"
                 value={project.role}
                 onChange={handleChange}
+                aria-label="Project role"
                 className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-slate-200 focus:outline-none focus:border-sky-500"
               />
             ) : (

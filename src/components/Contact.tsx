@@ -46,19 +46,19 @@ const Contact = () => {
             <div className="flex flex-col gap-4 w-full">
               <div className="flex items-center gap-4">
                 <Mail size={24} className="text-slate-400" />
-                <input type="email" name="email" value={contact.email} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Email" />
+                <input type="email" name="email" value={contact.email} onChange={handleChange} aria-label="Email address" className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Email" />
               </div>
               <div className="flex items-center gap-4">
                 <Phone size={24} className="text-slate-400" />
-                <input type="text" name="phone" value={contact.phone} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Phone" />
+                <input type="text" name="phone" value={contact.phone} onChange={handleChange} aria-label="Phone number" className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="Phone" />
               </div>
               <div className="flex items-center gap-4">
                 <Github size={24} className="text-slate-400" />
-                <input type="url" name="github" value={contact.github} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="GitHub URL" />
+                <input type="url" name="github" value={contact.github} onChange={handleChange} aria-label="GitHub URL" className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="GitHub URL" />
               </div>
               <div className="flex items-center gap-4">
                 <Linkedin size={24} className="text-slate-400" />
-                <input type="url" name="linkedin" value={contact.linkedin} onChange={handleChange} className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="LinkedIn URL" />
+                <input type="url" name="linkedin" value={contact.linkedin} onChange={handleChange} aria-label="LinkedIn URL" className="flex-1 bg-slate-800/50 border border-slate-700 rounded px-3 py-2 text-slate-200 focus:outline-none focus:border-sky-500" placeholder="LinkedIn URL" />
               </div>
             </div>
           ) : (

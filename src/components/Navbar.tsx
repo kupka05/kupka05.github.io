@@ -47,6 +47,7 @@ const Navbar = () => {
               name="name"
               value={header.name}
               onChange={handleNameChange}
+              aria-label="Site header name"
               className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xl md:text-2xl font-bold tracking-tighter text-white focus:outline-none focus:border-sky-500 w-32"
             />
             <span className="text-sky-400 text-xl md:text-2xl font-bold">.</span>
@@ -74,6 +75,8 @@ const Navbar = () => {
         <button
           className="md:hidden text-slate-300 hover:text-white"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close main menu" : "Open main menu"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
