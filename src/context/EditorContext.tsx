@@ -54,6 +54,7 @@ export const EditorProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useEditor = () => {
   const context = useContext(EditorContext);
   if (context === undefined) {
