@@ -78,7 +78,7 @@ const Contact = () => {
                 <div className="p-3 rounded-full bg-slate-800 border border-slate-700">
                   {item.icon}
                 </div>
-                <span className="font-medium hidden sm:block">{item.label}</span>
+                <span className="font-medium sr-only sm:not-sr-only">{item.label}</span>
               </a>
             ))
           )}
