@@ -5,3 +5,6 @@
 ## 2024-05-18 - Replacing `hidden` with `sr-only` for Screen Reader Support on Mobile
 **Learning:** Using Tailwind's `hidden` class (e.g. `hidden sm:block`) on icon-link labels removes the element from both the visual layout *and* the accessibility tree on mobile. This makes the link appear completely empty to mobile screen reader users.
 **Action:** Use `sr-only sm:not-sr-only` instead of `hidden sm:block` for text elements paired with icons inside links. This ensures the text remains visually hidden on mobile but fully accessible to screen readers, while displaying correctly on larger screens.
+## 2024-05-18 - Added `focus-visible` to interactive elements
+**Learning:** Adding custom focus rings (e.g. `focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 focus-visible:outline-none`) significantly improves keyboard navigation accessibility. Using `focus-visible` ensures these rings only appear for keyboard users, avoiding visual clutter for mouse users.
+**Action:** Always add `focus-visible` ring styles to `a` and `button` elements that lack clear focus states to support keyboard accessibility without compromising mouse-driven aesthetics.
