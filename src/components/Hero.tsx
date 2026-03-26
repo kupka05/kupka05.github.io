@@ -100,13 +100,13 @@ const Hero = () => {
         >
           <a
             href="#projects"
-            className="px-8 py-3 rounded-full bg-sky-500 text-slate-950 font-bold hover:bg-sky-400 transition-colors flex items-center gap-2"
+            className="px-8 py-3 rounded-full bg-sky-500 text-slate-950 font-bold hover:bg-sky-400 transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             프로젝트 보기
           </a>
           <a
             href="#contact"
-            className="px-8 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2"
+            className="px-8 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:bg-slate-800 transition-colors flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             <FileText size={18} />
             이력서 다운로드

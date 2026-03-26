@@ -41,7 +41,7 @@ const FloatingEditorButton = () => {
           >
             <button
               onClick={toggleEditing}
-              className={`flex items-center gap-2 px-4 py-2 rounded-full shadow-lg text-sm font-medium transition-colors ${
+              className={`flex items-center gap-2 px-4 py-2 rounded-full shadow-lg text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
                 isEditing
                   ? 'bg-amber-500 text-slate-900 hover:bg-amber-400'
                   : 'bg-indigo-500 text-white hover:bg-indigo-400'
@@ -60,7 +60,7 @@ const FloatingEditorButton = () => {
 
             <button
               onClick={handleCopy}
-              className="flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-slate-700 text-white hover:bg-slate-600 text-sm font-medium transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-slate-700 text-white hover:bg-slate-600 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               {copied ? (
                 <>
@@ -75,7 +75,7 @@ const FloatingEditorButton = () => {
 
             <button
               onClick={handleExport}
-              className="flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-sky-500 text-slate-900 hover:bg-sky-400 text-sm font-medium transition-colors"
+              className="flex items-center gap-2 px-4 py-2 rounded-full shadow-lg bg-sky-500 text-slate-900 hover:bg-sky-400 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
             >
               <Download size={16} /> Export JSON
             </button>
@@ -87,7 +87,7 @@ const FloatingEditorButton = () => {
         onClick={() => setIsOpen(!isOpen)}
         aria-label={isOpen ? "Close editor menu" : "Open editor menu"}
         aria-expanded={isOpen}
-        className={`p-4 rounded-full shadow-2xl text-white transition-colors flex items-center justify-center ${
+        className={`p-4 rounded-full shadow-2xl text-white transition-colors flex items-center justify-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${
           isEditing ? 'bg-amber-500 hover:bg-amber-400 text-slate-900' : 'bg-sky-500 hover:bg-sky-400'
         }`}
       >

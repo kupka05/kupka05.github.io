@@ -28,7 +28,7 @@ const Contact = () => {
           </p>
           <a
             href={`mailto:${contact.email}`}
-            className="px-8 py-4 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/30 font-bold hover:bg-sky-500 hover:text-slate-950 transition-all duration-300 flex items-center gap-3 text-lg group"
+            className="px-8 py-4 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/30 font-bold hover:bg-sky-500 hover:text-slate-950 transition-all duration-300 flex items-center gap-3 text-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             <MessageSquare size={20} className="group-hover:animate-bounce" />
             Say Hello
@@ -73,7 +73,7 @@ const Contact = () => {
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
-                className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors"
+                className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-full"
               >
                 <div className="p-3 rounded-full bg-slate-800 border border-slate-700">
                   {item.icon}
