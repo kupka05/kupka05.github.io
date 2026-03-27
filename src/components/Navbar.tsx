@@ -48,12 +48,12 @@ const Navbar = () => {
               value={header.name}
               onChange={handleNameChange}
               aria-label="Site header name"
-              className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xl md:text-2xl font-bold tracking-tighter text-white focus:outline-none focus:border-sky-500 w-32"
+              className="bg-slate-800/50 border border-slate-700 rounded px-2 py-1 text-xl md:text-2xl font-bold tracking-tighter text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-md focus:outline-none focus:border-sky-500 w-32"
             />
             <span className="text-sky-400 text-xl md:text-2xl font-bold">.</span>
           </div>
         ) : (
-          <a href="#home" className="text-xl md:text-2xl font-bold tracking-tighter text-white">
+          <a href="#home" className="text-xl md:text-2xl font-bold tracking-tighter text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-md">
             {header.name} <span className="text-sky-400">.</span>
           </a>
         )}
@@ -64,7 +64,7 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors"
+              className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
             >
               {link.name}
             </a>
@@ -73,7 +73,7 @@ const Navbar = () => {
 
         {/* Mobile Nav Toggle */}
         <button
-          className="md:hidden text-slate-300 hover:text-white"
+          className="md:hidden text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close main menu" : "Open main menu"}
           aria-expanded={isOpen}
@@ -97,7 +97,7 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-slate-300 hover:text-sky-400 transition-colors"
+                  className="text-base font-medium text-slate-300 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm"
                 >
                   {link.name}
                 </a>

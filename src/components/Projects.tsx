@@ -77,17 +77,17 @@ const ProjectCard = ({ project, index, onUpdate }: { project: Project; index: nu
           )}
           <div className="flex gap-2 shrink-0">
             {project.links?.play && (
-              <a href={project.links.play} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-sky-400 transition-colors" aria-label={`Play ${project.title}`}>
+              <a href={project.links.play} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm" aria-label={`Play ${project.title}`}>
                 <ExternalLink size={20} />
               </a>
             )}
             {project.links?.video && (
-              <a href={project.links.video} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-red-400 transition-colors" aria-label={`Watch ${project.title} video`}>
+              <a href={project.links.video} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-red-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm" aria-label={`Watch ${project.title} video`}>
                 <Play size={20} />
               </a>
             )}
             {project.links?.github && (
-              <a href={project.links.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors" aria-label={`View ${project.title} on GitHub`}>
+              <a href={project.links.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm" aria-label={`View ${project.title} on GitHub`}>
                 <Github size={20} />
               </a>
             )}
