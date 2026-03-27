@@ -114,15 +114,17 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <motion.div
+      <motion.a
+        href="#about"
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity, delay: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hidden md:flex flex-col items-center gap-2"
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-slate-500 hidden md:flex flex-col items-center gap-2 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
+        aria-label="Scroll down to About section"
       >
         <span className="text-xs uppercase tracking-widest font-medium">Scroll Down</span>
         <ChevronDown size={20} />
-      </motion.div>
+      </motion.a>
     </section>
   );
 };
