@@ -1,7 +1,3 @@
-## 2024-05-18 - Added Contextual ARIA Labels to Project Links
-**Learning:** Icon-only links within looping or repeated components (like `ProjectCard`) require dynamic, contextual `aria-label`s (e.g., `aria-label={\`Play \${project.title}\`}`). Generic labels like "Play" or "View on GitHub" become ambiguous when multiple instances exist on the same page.
-**Action:** Always interpolate unique identifiers (like item titles or IDs) into `aria-label`s when mapping over arrays to generate interactive elements, ensuring screen reader users can distinguish between them.
-
-## 2024-05-18 - Replacing `hidden` with `sr-only` for Screen Reader Support on Mobile
-**Learning:** Using Tailwind's `hidden` class (e.g. `hidden sm:block`) on icon-link labels removes the element from both the visual layout *and* the accessibility tree on mobile. This makes the link appear completely empty to mobile screen reader users.
-**Action:** Use `sr-only sm:not-sr-only` instead of `hidden sm:block` for text elements paired with icons inside links. This ensures the text remains visually hidden on mobile but fully accessible to screen readers, while displaying correctly on larger screens.
+## 2023-10-27 - Clickable Scroll Indicators and Native Tooltips
+**Learning:** Purely visual indicators (like a "Scroll Down" chevron) are often perceived as interactive by users. If they aren't clickable, it creates a small point of friction. Additionally, relying solely on `aria-label` for icon-only buttons leaves sighted users without context; native `title` attributes provide an immediate, accessible tooltip for them.
+**Action:** Always convert visual scroll indicators into functional anchor links with `focus-visible` states. Ensure all icon-only buttons have both an `aria-label` (for screen readers) and a `title` attribute (for native mouse hover tooltips).
