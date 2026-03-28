@@ -76,6 +76,7 @@ const Navbar = () => {
           className="md:hidden text-slate-300 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close main menu" : "Open main menu"}
+          title={isOpen ? "Close main menu" : "Open main menu"}
           aria-expanded={isOpen}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
