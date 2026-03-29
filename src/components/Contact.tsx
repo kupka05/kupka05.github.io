@@ -28,6 +28,7 @@ const Contact = () => {
           </p>
           <a
             href={`mailto:${contact.email}`}
+            aria-label="Say Hello"
             className="px-8 py-4 rounded-xl bg-sky-500/10 text-sky-400 border border-sky-500/30 font-bold hover:bg-sky-500 hover:text-slate-950 transition-all duration-300 flex items-center gap-3 text-lg group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900"
           >
             <MessageSquare size={20} className="group-hover:animate-bounce" />
@@ -63,14 +64,15 @@ const Contact = () => {
             </div>
           ) : (
             [
-              { icon: <Mail size={24} />, label: contact.email, href: `mailto:${contact.email}` },
-              { icon: <Phone size={24} />, label: contact.phone, href: `tel:${contact.phone.replace(/-/g, '')}` },
-              { icon: <Github size={24} />, label: "GitHub", href: contact.github },
-              { icon: <Linkedin size={24} />, label: "LinkedIn", href: contact.linkedin },
+              { icon: <Mail size={24} />, label: contact.email, href: `mailto:${contact.email}`, ariaLabel: "Email address" },
+              { icon: <Phone size={24} />, label: contact.phone, href: `tel:${contact.phone.replace(/-/g, '')}`, ariaLabel: "Phone number" },
+              { icon: <Github size={24} />, label: "GitHub", href: contact.github, ariaLabel: "GitHub profile" },
+              { icon: <Linkedin size={24} />, label: "LinkedIn", href: contact.linkedin, ariaLabel: "LinkedIn profile" },
             ].map((item, idx) => (
               <a
                 key={idx}
                 href={item.href}
+                aria-label={item.ariaLabel}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
                 className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-full"
