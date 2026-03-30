@@ -5,3 +5,6 @@
 ## 2024-05-18 - Replacing `hidden` with `sr-only` for Screen Reader Support on Mobile
 **Learning:** Using Tailwind's `hidden` class (e.g. `hidden sm:block`) on icon-link labels removes the element from both the visual layout *and* the accessibility tree on mobile. This makes the link appear completely empty to mobile screen reader users.
 **Action:** Use `sr-only sm:not-sr-only` instead of `hidden sm:block` for text elements paired with icons inside links. This ensures the text remains visually hidden on mobile but fully accessible to screen readers, while displaying correctly on larger screens.
+## 2024-05-18 - Added `title` attributes alongside `aria-label` for Native Tooltips
+**Learning:** `aria-label` is crucial for screen readers, but sighted users (e.g. keyboard users or mouse users) do not benefit from it. For icon-only buttons or links, native hover tooltips via the `title` attribute help sighted users understand the action before interacting.
+**Action:** When adding `aria-label` to an icon-only interactive element, mirror the same value in a `title` attribute to provide a native hover tooltip.
