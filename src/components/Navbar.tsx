@@ -77,6 +77,7 @@ const Navbar = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close main menu" : "Open main menu"}
           aria-expanded={isOpen}
+          title={isOpen ? "Close main menu" : "Open main menu"}
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
