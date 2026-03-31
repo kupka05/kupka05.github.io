@@ -74,6 +74,7 @@ const Contact = () => {
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
                 className="flex items-center gap-3 text-slate-400 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-full"
+                title={item.label}
               >
                 <div className="p-3 rounded-full bg-slate-800 border border-slate-700">
                   {item.icon}
