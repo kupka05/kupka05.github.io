@@ -9,3 +9,6 @@
 ## 2024-06-05 - Native Tooltips for Icon-Only Elements
 **Learning:** Screen reader users were getting better context than sighted mouse users because icon-only buttons had `aria-label`s but lacked native `title` attributes. This discrepancy degrades the UX for sighted users who rely on tooltips to understand icon functions.
 **Action:** Always pair `aria-label` with a native `title` attribute (or a custom tooltip component) on icon-only interactive elements to ensure equitable context for both screen reader and sighted mouse users.
+## 2023-10-27 - Active Navigation State Wayfinding
+**Learning:** Adding an active state to single-page navigation links using `IntersectionObserver` paired with `aria-current="true"` significantly improves both visual wayfinding for sighted users and structural context for screen reader users. It provides immediate feedback on scroll position without requiring manual clicks.
+**Action:** Always implement scroll-spy functionality on single-page-application navigation bars, ensuring the active item is styled distinctly and has the `aria-current="true"` attribute to meet WCAG standards.
