@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('');
   const { isEditing, data, updateSection } = useEditor();
   const { header } = data;
 
@@ -30,7 +31,25 @@ const Navbar = () => {
       }
     };
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -50% 0px' }
+    );
+
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      sections.forEach((section) => observer.unobserve(section));
+    };
   }, []);
 
   return (
@@ -64,7 +83,10 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-slate-300 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm"
+              aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
+              className={`text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 rounded-sm ${
+                activeSection === link.href.substring(1) ? 'text-sky-400' : 'text-slate-300 hover:text-sky-400'
+              }`}
             >
               {link.name}
             </a>
@@ -98,7 +120,10 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-base font-medium text-slate-300 hover:text-sky-400 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm"
+                  aria-current={activeSection === link.href.substring(1) ? 'page' : undefined}
+                  className={`text-base font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-800 rounded-sm ${
+                    activeSection === link.href.substring(1) ? 'text-sky-400' : 'text-slate-300 hover:text-sky-400'
+                  }`}
                 >
                   {link.name}
                 </a>
