@@ -9,3 +9,6 @@
 ## 2024-06-05 - Native Tooltips for Icon-Only Elements
 **Learning:** Screen reader users were getting better context than sighted mouse users because icon-only buttons had `aria-label`s but lacked native `title` attributes. This discrepancy degrades the UX for sighted users who rely on tooltips to understand icon functions.
 **Action:** Always pair `aria-label` with a native `title` attribute (or a custom tooltip component) on icon-only interactive elements to ensure equitable context for both screen reader and sighted mouse users.
+## 2026-04-05 - Using aria-current for Active Navigation States
+**Learning:** Sighted users can infer which page section they are viewing via active visual styles (like text color changes), but screen reader users miss this context if it relies purely on CSS classes.
+**Action:** Use the `aria-current="page"` attribute dynamically on navigation links corresponding to the currently active or visible section of the application. This ensures screen reader users receive explicit wayfinding information equivalent to visual indicators.
