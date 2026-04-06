@@ -9,3 +9,6 @@
 ## 2024-06-05 - Native Tooltips for Icon-Only Elements
 **Learning:** Screen reader users were getting better context than sighted mouse users because icon-only buttons had `aria-label`s but lacked native `title` attributes. This discrepancy degrades the UX for sighted users who rely on tooltips to understand icon functions.
 **Action:** Always pair `aria-label` with a native `title` attribute (or a custom tooltip component) on icon-only interactive elements to ensure equitable context for both screen reader and sighted mouse users.
+## 2024-04-06 - [Keyboard Nav] Escape Key for Menus
+**Learning:** Custom overlapping menus like mobile nav and floating action buttons without native dialog elements lack default Escape key support, trapping keyboard users.
+**Action:** Always add a global `keydown` event listener for 'Escape' to dismiss any custom `isOpen` state components.
