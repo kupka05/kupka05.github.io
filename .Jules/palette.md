@@ -9,3 +9,6 @@
 ## 2024-06-05 - Native Tooltips for Icon-Only Elements
 **Learning:** Screen reader users were getting better context than sighted mouse users because icon-only buttons had `aria-label`s but lacked native `title` attributes. This discrepancy degrades the UX for sighted users who rely on tooltips to understand icon functions.
 **Action:** Always pair `aria-label` with a native `title` attribute (or a custom tooltip component) on icon-only interactive elements to ensure equitable context for both screen reader and sighted mouse users.
+## 2024-05-18 - Escape Key Accessibility for Overlays
+**Learning:** Custom overlay menus (like the mobile navigation menu or the floating editor action button) do not have built-in accessibility features to allow dismissal via keyboard interactions by default. Without an `Escape` key handler, keyboard-only users can get trapped inside the overlay or be forced to navigate back through the entire document flow to locate the close button.
+**Action:** Always add a global `keydown` event listener for the `Escape` key inside a `useEffect` hook to explicitly close custom modals, dropdowns, and overlay menus when they are active.
