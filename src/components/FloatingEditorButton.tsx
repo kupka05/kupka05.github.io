@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useEditor } from '../context/EditorContext';
 import { Edit2, Save, Download, X, Copy, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -7,6 +7,17 @@ const FloatingEditorButton = () => {
   const { isEditing, toggleEditing, data } = useEditor();
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isOpen]);
 
   const handleExport = () => {
     const dataStr = JSON.stringify(data, null, 2);
