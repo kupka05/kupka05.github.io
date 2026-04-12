@@ -1,9 +1,9 @@
-import { createContext, useContext, useState } from 'react';
-import type { ReactNode } from 'react';
-import portfolioJsonData from '../data/portfolio.json';
+import { createContext, useContext, useState } from "react";
+import type { ReactNode } from "react";
+import portfolioJsonData from "../data/portfolio.json";
 
 // We explicitly cast the imported JSON to the expected structure
-import type { Skill, Project } from '../data/portfolioData';
+import type { Skill, Project, BlogPost } from "../data/portfolioData";
 
 export type PortfolioDataType = {
   header: typeof portfolioJsonData.header;
@@ -12,6 +12,7 @@ export type PortfolioDataType = {
   skills: Skill[];
   projects: Project[];
   contact: typeof portfolioJsonData.contact;
+  blog: BlogPost[];
 };
 
 interface EditorContextType {
@@ -19,7 +20,10 @@ interface EditorContextType {
   toggleEditing: () => void;
   data: PortfolioDataType;
   updateData: (newData: PortfolioDataType) => void;
-  updateSection: <K extends keyof PortfolioDataType>(section: K, sectionData: PortfolioDataType[K]) => void;
+  updateSection: <K extends keyof PortfolioDataType>(
+    section: K,
+    sectionData: PortfolioDataType[K],
+  ) => void;
 }
 
 const EditorContext = createContext<EditorContextType | undefined>(undefined);
@@ -29,7 +33,8 @@ export const EditorProvider = ({ children }: { children: ReactNode }) => {
   const [data, setData] = useState<PortfolioDataType>({
     ...portfolioJsonData,
     skills: portfolioJsonData.skills as Skill[],
-    projects: portfolioJsonData.projects as Project[]
+    projects: portfolioJsonData.projects as Project[],
+    blog: (portfolioJsonData as unknown as { blog: BlogPost[] }).blog || [],
   });
 
   const toggleEditing = () => {
@@ -40,7 +45,10 @@ export const EditorProvider = ({ children }: { children: ReactNode }) => {
     setData(newData);
   };
 
-  const updateSection = <K extends keyof PortfolioDataType>(section: K, sectionData: PortfolioDataType[K]) => {
+  const updateSection = <K extends keyof PortfolioDataType>(
+    section: K,
+    sectionData: PortfolioDataType[K],
+  ) => {
     setData((prev) => ({
       ...prev,
       [section]: sectionData,
@@ -48,7 +56,9 @@ export const EditorProvider = ({ children }: { children: ReactNode }) => {
   };
 
   return (
-    <EditorContext.Provider value={{ isEditing, toggleEditing, data, updateData, updateSection }}>
+    <EditorContext.Provider
+      value={{ isEditing, toggleEditing, data, updateData, updateSection }}
+    >
       {children}
     </EditorContext.Provider>
   );
@@ -58,7 +68,7 @@ export const EditorProvider = ({ children }: { children: ReactNode }) => {
 export const useEditor = () => {
   const context = useContext(EditorContext);
   if (context === undefined) {
-    throw new Error('useEditor must be used within an EditorProvider');
+    throw new Error("useEditor must be used within an EditorProvider");
   }
   return context;
 };

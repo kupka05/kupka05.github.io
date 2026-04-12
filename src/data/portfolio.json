@@ -12,20 +12,60 @@
     "content": "저는 3년 차 게임 기획자로서 다양한 장르의 프로젝트에서 시스템 기획, 레벨 디자인, 밸런싱을 경험했습니다. 데이터에 기반한 의사결정과 원활한 커뮤니케이션을 통해 팀의 비전을 현실로 만드는 것을 목표로 합니다. 특히 유저가 게임의 핵심 루프에 몰입할 수 있도록 돕는 디테일한 레벨 디자인에 관심이 많습니다.",
     "imageUrl": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2070&auto=format&fit=crop",
     "roles": [
-      { "icon": "PenTool", "label": "시스템 기획" },
-      { "icon": "Database", "label": "데이터 밸런싱" },
-      { "icon": "Code", "label": "스크립팅" },
-      { "icon": "User", "label": "UI/UX 기획" }
+      {
+        "icon": "PenTool",
+        "label": "시스템 기획"
+      },
+      {
+        "icon": "Database",
+        "label": "데이터 밸런싱"
+      },
+      {
+        "icon": "Code",
+        "label": "스크립팅"
+      },
+      {
+        "icon": "User",
+        "label": "UI/UX 기획"
+      }
     ]
   },
   "skills": [
-    { "name": "Unity", "level": "상", "category": "Engine" },
-    { "name": "Unreal Engine", "level": "중", "category": "Engine" },
-    { "name": "Lua", "level": "중", "category": "Scripting" },
-    { "name": "Blueprint", "level": "상", "category": "Scripting" },
-    { "name": "C#", "level": "하", "category": "Scripting" },
-    { "name": "Jira / Confluence", "level": "상", "category": "Tools" },
-    { "name": "Excel (VBA)", "level": "상", "category": "Tools" }
+    {
+      "name": "Unity",
+      "level": "상",
+      "category": "Engine"
+    },
+    {
+      "name": "Unreal Engine",
+      "level": "중",
+      "category": "Engine"
+    },
+    {
+      "name": "Lua",
+      "level": "중",
+      "category": "Scripting"
+    },
+    {
+      "name": "Blueprint",
+      "level": "상",
+      "category": "Scripting"
+    },
+    {
+      "name": "C#",
+      "level": "하",
+      "category": "Scripting"
+    },
+    {
+      "name": "Jira / Confluence",
+      "level": "상",
+      "category": "Tools"
+    },
+    {
+      "name": "Excel (VBA)",
+      "level": "상",
+      "category": "Tools"
+    }
   ],
   "projects": [
     {
@@ -38,7 +78,29 @@
       "imageUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
       "links": {
         "video": "https://youtube.com"
-      }
+      },
+      "blocks": [
+        {
+          "type": "overview",
+          "engine": "Unity 2022",
+          "genre": "Action RPG",
+          "roles": ["Lead Level Designer", "System Designer"],
+          "content": "A fast-paced Action RPG focusing on fluid combat and intricate level design. Led a team of 3 level designers to create 5 distinct biomes."
+        },
+        {
+          "type": "mechanics",
+          "title": "Core Combat Loop",
+          "content": "Designed the stamina-based combat system. Players must balance aggressive combo strings with defensive dodges. Implemented Perfect Parry window (0.15s) that grants temporary invulnerability.",
+          "image": "https://images.unsplash.com/photo-1552820728-8b83bb6b773f?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "type": "level-design",
+          "title": "Level Architecture: The Sunken City",
+          "content": "Utilized Hub and Spoke layout. The central area acts as a safe zone, branching into increasingly difficult challenge arenas. Used verticality to hide secrets and encourage exploration.",
+          "image": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070&auto=format&fit=crop",
+          "caption": "Early graybox layout for The Sunken City hub."
+        }
+      ]
     },
     {
       "id": "project-2",
@@ -51,7 +113,22 @@
       "links": {
         "play": "https://play.google.com",
         "github": "https://github.com"
-      }
+      },
+      "blocks": [
+        {
+          "type": "overview",
+          "engine": "Unreal Engine 5",
+          "genre": "Casual Puzzle",
+          "roles": ["Level Designer"],
+          "content": "A physics-based puzzle game. Designed over 100 levels with a progressive difficulty curve."
+        },
+        {
+          "type": "mechanics",
+          "title": "Physics Puzzles",
+          "content": "Players manipulate environmental objects to guide the character. I tuned the mass and friction values of the objects to ensure consistent puzzle solutions.",
+          "image": "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop"
+        }
+      ]
     },
     {
       "id": "project-3",
@@ -60,7 +137,16 @@
       "role": "UI/UX 기획, 시나리오 스크립팅",
       "period": "2021.08 - 2022.04",
       "description": "턴제 텍스트 어드벤처 및 전략 게임. 유저 인터페이스의 플로우를 설계하고 Lua를 활용한 인게임 이벤트 스크립팅을 담당했습니다.",
-      "imageUrl": "https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2070&auto=format&fit=crop"
+      "imageUrl": "https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2070&auto=format&fit=crop",
+      "blocks": [
+        {
+          "type": "overview",
+          "engine": "Custom Engine",
+          "genre": "Strategy",
+          "roles": ["UI/UX", "Scripter"],
+          "content": "A deep narrative strategy game. Handled the UI flow and implemented branching dialogue trees."
+        }
+      ]
     }
   ],
   "contact": {
@@ -68,5 +154,23 @@
     "phone": "010-1234-5678",
     "github": "https://github.com",
     "linkedin": "https://linkedin.com"
-  }
+  },
+  "blog": [
+    {
+      "id": "post-1",
+      "title": "Designing the Perfect Parry: A Case Study",
+      "date": "2024-03-15",
+      "type": "Design Analysis",
+      "excerpt": "An in-depth look at how we tuned the parry window in Project Alpha to feel rewarding without being overly punishing.",
+      "image": "https://images.unsplash.com/photo-1614294149010-950b698f72c0?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "post-2",
+      "title": "Post-Mortem: Global Game Jam 2024",
+      "date": "2024-01-28",
+      "type": "Post-mortem",
+      "excerpt": "What went right and what went horribly wrong during our 48-hour crunch to build a rhythm-based cooking game.",
+      "image": "https://images.unsplash.com/photo-1555680202-c86f0e12f086?q=80&w=2070&auto=format&fit=crop"
+    }
+  ]
 }
