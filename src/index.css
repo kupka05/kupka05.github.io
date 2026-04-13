@@ -1,19 +1,82 @@
 @import "tailwindcss";
 
 @theme {
-  --color-dark-bg: #0f172a; /* slate-900 */
-  --color-dark-surface: #1e293b; /* slate-800 */
-  --color-primary-accent: #38bdf8; /* sky-400 */
-  --color-text-main: #f8fafc; /* slate-50 */
-  --color-text-muted: #94a3b8; /* slate-400 */
+  /* Ether Portfolio - Ethereal Gallery Design System */
+
+  /* Primary typography */
+  --font-display: "Manrope", sans-serif;
+  --font-body: "Inter", sans-serif;
+
+  /* Monochromatic Spectrum */
+  --color-surface-lowest: #ffffff;
+  --color-surface-low: #f3f4f5;
+  --color-surface: #f8f9fa;
+  --color-surface-container: #edeeef;
+  --color-surface-high: #e7e8e9;
+
+  /* Text & Accents */
+  --color-on-surface: #191c1d;
+  --color-on-surface-muted: #3c494e;
+  --color-outline-variant: #bbc9cf;
+
+  /* The Vibrant Pulse (Cyan) */
+  --color-primary: #00677d;
+  --color-primary-container: #43d0f5;
+  --color-on-primary: #ffffff;
 }
 
 html {
   scroll-behavior: smooth;
+  /* Light mode only */
+  color-scheme: light;
 }
 
 body {
-  background-color: var(--color-dark-bg);
-  color: var(--color-text-main);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+  /* 'active whitespace' base */
+  padding: 0;
+  margin: 0;
+}
+
+/* Glassmorphism utility */
+.glass-nav {
+  background-color: rgba(248, 249, 250, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* Primary Gradient Button Utility */
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary),
+    var(--color-primary-container)
+  );
+  color: var(--color-on-primary);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(67, 208, 245, 0.2);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 8px 24px rgba(67, 208, 245, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Ambient shadow for floating elements */
+.ambient-shadow {
+  box-shadow: 0 20px 40px rgba(25, 28, 29, 0.04);
+}
+
+/* Typography styles based on the design system */
+.display-text {
+  font-family: var(--font-display);
+  letter-spacing: -0.02em;
+}
+
+.headline-text {
+  font-family: var(--font-display);
 }
