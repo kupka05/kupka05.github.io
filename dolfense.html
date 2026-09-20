@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>돌펜스: 골렘막기 — 김현택</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">KIM HYEONTAEK · PORTFOLIO</a>
+    <a class="back" href="index.html#projects">← 프로젝트 목록</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="banner white"><img src="assets/dolfense/hero.png" alt="돌펜스 로고"></div>
+
+  <div class="head">
+    <p class="kicker">게임기획 스터디 · 2023.10</p>
+    <h1>슈팅 디펜스 게임 《돌펜스: 골렘막기》</h1>
+    <p class="lead">세계 유일의 대마법사 ‘돌펜스’가 되어 세계수를 파괴하기 위해 다가오는 거대 골렘을 물리치는 VR 슈터 디펜스 게임입니다. 프로그래머와 팀을 결성하여 첫 합을 맞추기 위한 작은 프로젝트였으며, 짧은 개발기간에도 불구하고 장르적인 재미 또한 갖춘 게임이 되었습니다.</p>
+  </div>
+
+  <dl class="facts"><div><dt>기간</dt><dd>2023.10.04 — 2023.10.27<br><span style="color:var(--ink-3);font-size:13px">17일, 주말 제외</span></dd></div><div><dt>역할</dt><dd>기획팀장 · 시스템 기획 · 컨텐츠 기획 · 밸런싱</dd></div><div><dt>엔진</dt><dd>Unity 2021.3.27f1 · Git</dd></div><div><dt>플랫폼</dt><dd>VR — PC</dd></div></dl>
+
+  <div class="vids duo"><article class="vid"><button class="yt" data-id="oyieG6OGELg" aria-label="플레이 영상 (승리 시) 재생"></button><div class="vid-body"><h3>플레이 영상 (승리 시)</h3></div></article><article class="vid"><button class="yt" data-id="9LPYRwZyP1M" aria-label="플레이 영상 (패배 시) 재생"></button><div class="vid-body"><h3>플레이 영상 (패배 시)</h3></div></article></div>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">01</span><h2>게임 소개</h2></div>
+    <div class="prose">
+      <p>위대한 대마법사 돌펜스여, 세계수로 다가오는 골렘을 막고 세계를 구하여라!</p>
+      <p style="color:var(--ink-2)">약 2주 간의 짧은 기간을 설정하여 신속하게 개발했습니다.</p>
+      <div class="chips"><span class="tag">1인칭 슈터</span><span class="tag">디펜스</span><span class="tag">VR</span></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">02</span><h2>담당 업무</h2></div>
+    <div class="work"><h3><small>01</small>기획 팀장</h3><div>
+      <div class="item"><h4>게임 방향 설정</h4><ul><li>제안서 작성을 통해 프로젝트의 방향과 구조를 설명</li></ul></div>
+      <div class="item"><h4>협업 툴 세팅</h4><ul><li>Notion</li></ul></div>
+    </div></div>
+    <div class="work"><h3><small>02</small>시스템 기획</h3><div>
+      <div class="item"><h4>게임 전체 플로우 제시</h4><ul><li>게임 Flow 기획서를 통해 게임의 전체적인 플레이 구조 및 UI/UX 설명</li></ul>
+        <figure class="wide"><img src="assets/dolfense/flow.png" alt="돌펜스 게임 Flow" loading="lazy"><figcaption>어플리케이션 실행~게임 종료까지의 Flow를 기획 (돌펜스 게임 Flow 기획서에서 발췌)</figcaption></figure></div>
+    </div></div>
+    <div class="work"><h3><small>03</small>컨텐츠 기획</h3><div>
+      <div class="item"><h4>화염탄 유닛</h4><ul><li>투사체가 이리저리 튕겨나가는 코믹한 디펜스 유닛 기획</li></ul></div>
+      <div class="mgrid duo">
+        <figure class="mcard"><video muted loop playsinline preload="none" poster="assets/dolfense/fireball.jpg" aria-label="화염탄 유닛" data-autoplay><source src="assets/dolfense/fireball.mp4" type="video/mp4"></video></figure>
+        <div class="code inline-code"><div class="code-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>fireball.xml</span></div>
+<pre><span class="c">&lt;!-- GIF 속 화염탄 유닛의 특징 --&gt;</span>
+
+화염 콜라이더가 발생하는 조건을
+바닥에 한정하는 것으로 골렘을 향해
+발사된 Projectile이 불규칙하게
+튕겨나오며 재미있는 그림이 나왔다.</pre></div>
+      </div>
+    </div></div>
+    <div class="work"><h3><small>04</small>밸런싱</h3><div>
+      <div class="item"><h4>전투 밸런스</h4><ul><li>게임 플레이 시간을 3~5분으로 설정</li></ul></div>
+      <div class="item"><h4>재화 밸런스</h4><ul><li>적정한 난이도에 맞춰 PC 획득 골드량과 상점 가격 조정</li><li>긴장감 있는 플레이 구현을 위해 PC, 미니언, 보스 스탯 조정</li></ul></div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">03</span><h2>인원 구성</h2></div>
+    <div class="team">
+      <div><h3>기획</h3><div class="member me">김현택 / 기획 팀장</div><div class="member">김정훈 / PM</div><div class="member">김지영 / 팀원</div></div>
+      <div><h3>프로그래밍</h3><div class="member">윤지환 / 프로그래밍 팀장</div><div class="member">최진성 / 메인</div><div class="member">최승규 / 서브</div><div class="member">진영수 / 서브</div></div>
+    </div>
+  </section>
+
+  <nav class="pager"><a href="drillme.html">← Drill&ME</a><a href="r2r.html">Project R2R →</a></nav>
+
+</main>
+
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drill&ME — 김현택</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">KIM HYEONTAEK · PORTFOLIO</a>
+    <a class="back" href="index.html#projects">← 프로젝트 목록</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="banner white"><img src="assets/drillme/hero.png" alt="Drill&amp;ME 로고"></div>
+
+  <div class="head">
+    <p class="kicker">게임기획 스터디 · 2023.10 — 2024.01</p>
+    <h1>로그라이트 액션 RPG 《Drill &amp; ME》</h1>
+    <p class="lead">행성에 불시착한 주인공이 자신의 주무기인 ‘드릴’을 가지고 지하 던전을 공략하는 로그라이트 액션 RPG 게임입니다. 퀘스트가 있고, 싸우는 재미가 있으며, N회차 가능한 게임을 만들기 위해 미니 게임부터 함께한 프로그래머 분들과 최선을 다했습니다. 약 2달 정도의 일정을 수립하여 진행했고 기한 안에 플레이어블한 빌드가 나왔습니다.</p>
+  </div>
+
+  <dl class="facts"><div><dt>기간</dt><dd>2023.10.31 — 2024.01.25<br><span style="color:var(--ink-3);font-size:13px">58일, 주말 제외</span></dd></div><div><dt>역할</dt><dd>기획팀장 · 시스템 기획 · 컨텐츠 기획 · 밸런싱</dd></div><div><dt>엔진</dt><dd>Unity 2021.3.27f1 · Git</dd></div><div><dt>플랫폼</dt><dd>VR — PC, 오큘러스 퀘스트 2</dd></div></dl>
+
+  <div class="vids duo"><article class="vid"><button class="yt" data-id="I0FdXCDGnOs" aria-label="트레일러 영상 재생"></button><div class="vid-body"><h3>트레일러 영상</h3></div></article><article class="vid"><button class="yt" data-id="w0hG9DTI_vQ" aria-label="플레이 영상 재생"></button><div class="vid-body"><h3>플레이 영상</h3></div></article></div>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">01</span><h2>게임 소개</h2></div>
+    <div class="prose">
+      <p>불시착한 충격으로 기억을 잃은 탐험자(플레이어)가 기억을 되찾기 위해 드릴을 손에 들고 행성 지하의 던전을 탐험하며 악의 무리 &lt;드림 스토커&gt;를 처치하는 로그라이트 액션 RPG 게임</p>
+      <div class="chips"><span class="tag">액션 RPG</span><span class="tag">로그라이트</span><span class="tag">VR</span></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">02</span><h2>담당 업무</h2></div>
+    <div class="work"><h3><small>01</small>기획 팀장</h3><div>
+      <div class="item"><h4>게임 방향 설정</h4><ul><li>제안서 작성을 통해 프로젝트의 방향과 구조를 설명</li></ul>
+        <figure class="wide"><img src="assets/drillme/flow.png" alt="게임 Flow 도식" loading="lazy"><figcaption>제안서에 들어간 최초의 게임 Flow 도식</figcaption></figure></div>
+      <div class="item"><h4>협업 툴 세팅</h4><ul><li>Notion · JIRA · Confluence</li></ul></div>
+    </div></div>
+    <div class="work"><h3><small>02</small>시스템 기획</h3><div>
+      <div class="mgrid">
+        <figure class="mcard"><video muted loop playsinline preload="none" poster="assets/drillme/bsp.jpg" aria-label="절차적 생성" data-autoplay><source src="assets/drillme/bsp.mp4" type="video/mp4"></video><figcaption><b>절차적 생성 시스템</b>던전 맵 및 오브젝트, 이벤트 생성. 자동 생성되는 맵의 세부사항(맵의 크기, 방 개수, 등장하는 동적개체 등)을 조절 가능하게 기획</figcaption></figure>
+        <figure class="mcard"><video muted loop playsinline preload="none" poster="assets/drillme/drill-grind.jpg" aria-label="드릴과 훅샷" data-autoplay><source src="assets/drillme/drill-grind.mp4" type="video/mp4"></video><figcaption><b>무기 기획</b>PC가 사용하는 드릴과 관련한 시스템 기획(외형, 스탯, 훅샷 등). 훅샷 기동으로 스타일리시한 플레이 경험을 주고자 했다</figcaption></figure>
+        <figure class="mcard"><video muted loop playsinline preload="none" poster="assets/drillme/drill-ui.jpg" aria-label="인벤토리 UI" data-autoplay><source src="assets/drillme/drill-ui.mp4" type="video/mp4"></video><figcaption><b>인벤토리 기획</b>인벤토리의 구조와 UI/UX 기획. VR 특유의 사실적인 경험을 강화하기 위해 제스처(가슴 부근을 쥐는 행위)로 UI를 여는 형태로 기획했다</figcaption></figure>
+      </div>
+    </div></div>
+    <div class="work"><h3><small>03</small>컨텐츠 기획</h3><div>
+      <div class="item"><h4>시나리오/설정 기획서</h4><ul><li>전체적인 시나리오 컨셉 및 방향 제시</li><li>PC의 배경, 세계관 설정</li><li>보스(1층, 5층) 시나리오 및 대사</li></ul></div>
+    </div></div>
+    <div class="work"><h3><small>04</small>밸런싱</h3><div><ul>
+      <li>재화(골드, 경험치) 밸런스의 방향 제시</li><li>PC 스탯의 기본 수치와 강화 관련 밸런스의 방향 제시</li><li>소모 아이템(포션, 폭탄 등)의 가격과 성능</li><li>크래프팅 관련 수치 밸런스</li>
+    </ul></div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">03</span><h2>인원 구성</h2><span class="sec-note">이름을 누르면 담당 범위가 펼쳐집니다</span></div>
+    <div class="team">
+      <div>
+        <h3>기획</h3>
+        <details class="me"><summary>김현택 / 기획 팀장</summary><ul><li><b>시스템 기획</b> — 절차적 생성, 무기, 인벤토리</li><li><b>컨텐츠 기획</b> — 전체 시놉시스, 세계관, NPC 2종, 보스 설정 및 대사(1층, 5층)</li></ul></details>
+        <details><summary>김정훈 / PM</summary><ul><li><b>시스템 기획</b> — 몬스터 AI, 보스 공격 패턴, 보스 스테이지 레벨 디자인</li><li><b>컨텐츠 기획</b> — 몬스터 설정/배경, 보스 게임 Flow, 보스 설정 및 대사(4층)</li></ul></details>
+        <details><summary>김지영 / 팀원</summary><ul><li><b>시스템 기획</b> — 퀘스트, NPC, 상점, 재화, MBTI 체크</li><li><b>컨텐츠 기획</b> — 퀘스트, 로비 디자인, NPC 설정 및 대사, 보스 설정 및 대사(2층)</li></ul></details>
+        <details><summary>김용규 / 팀원</summary><ul><li><b>시스템 기획</b> — PC, 스킬, 상태창, 버프&amp;디버프 UI</li><li><b>컨텐츠 기획</b> — 스킬 4종, 보스 설정 및 대사(3층)</li><li><b>밸런싱 기획</b> — 재화, 전투</li></ul></details>
+      </div>
+      <div>
+        <h3>프로그래밍</h3>
+        <details><summary>윤지환 / 프로그래밍 팀장</summary><ul><li>플레이어(이동, 스테이터스), 무기(드릴, 훅샷), 드릴 스킬, 업그레이드 시스템, MBTI 체크 시스템, 오디오 믹서</li></ul></details>
+        <details><summary>최진성 / 메인</summary><ul><li>데이터(데이터매니저, DB연동, 구글시트, CSV), 인벤토리, 아이템, 상점, 퀘스트, 크래프팅, 보스 구조 및 기능 연결</li></ul></details>
+        <details><summary>최승규 / 서브</summary><ul><li>BSP 맵 동적 랜덤생성, 동적 네비게이션 베이크, NPC(대화, UI, 보상, 선택지), 오브젝트 생성, 던전 문·뚫리는 벽</li></ul></details>
+        <details><summary>진영수 / 서브</summary><ul><li>몬스터 구현, 몬스터 스킬(디버프) 구현, 보스 공격 패턴</li></ul></details>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pager"><a href="pearlabyss.html">← 신작게임디자인 (펄어비스)</a><a href="dolfense.html">돌펜스: 골렘막기 →</a></nav>
+
+</main>
+
+<script src="js/site.js"></script>
+</body>
+</html>

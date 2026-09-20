@@ -1,13 +1,199 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김현택 — 전투 · 캐릭터 기획자</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">KIM HYEONTAEK · PORTFOLIO</a>
+    <nav class="nav">
+      <a href="#projects">프로젝트</a>
+      <a href="#docs">실무 기획서</a>
+      <a href="#original">창작 기획서</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <img class="photo" src="assets/profile.jpg" alt="김현택 프로필 사진">
+    <div>
+      <p class="role">COMBAT · CHARACTER DESIGNER</p>
+      <h1>김현택</h1>
+      <p class="h1-sub">金譞澤 · KIM HYEONTAEK</p>
+      <dl class="meta">
+        <div><dt>ROLE</dt><dd>전투 · 캐릭터 기획</dd></div>
+        <div><dt>NOW</dt><dd>스튜디오비사이드</dd></div>
+        <div><dt>AGE</dt><dd>만 33세</dd></div>
+        <div><dt>BASE</dt><dd>서울 송파구</dd></div>
+        <div><dt>MAIL</dt><dd><a href="mailto:k_wolf05@naver.com">k_wolf05@naver.com</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <div class="code" aria-label="소개">
+    <div class="code-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>intro.xml</span></div>
+<pre><span class="c">&lt;!-- 한 마디 &amp;&amp; 가치관 --&gt;</span>
+
+게임 만드는 과정이 너무나 소중하고 행복한 <span class="k">게임 디자이너</span> 김현택입니다.
+<span class="k">전투 기획</span>을 중심으로 실무 경험을 쌓았으며 <span class="k">긍정적인 유저 경험을 상상하며</span> 게임을 만듭니다.
+
+마음을 울리는 책을 읽고 환상적인 게임을 즐기는 것이 행복한 삶이라고 생각합니다.</pre>
+  </div>
+
+  <section class="sec" id="projects">
+    <div class="sec-head"><span class="sec-no">01</span><h2>프로젝트 이력</h2><span class="sec-note">카드를 누르면 상세 페이지로 이동</span></div>
+    <div class="grid">
+
+      <a class="card" href="project-i.html">
+        <div class="cover cv1"><div>PROJECT I<small>IN DEVELOPMENT</small></div></div>
+        <div class="card-body">
+          <span class="period">진행 중</span>
+          <h3>프로젝트 I<span class="live">NOW</span></h3>
+          <p>방치형 RPG — 전투 시스템·컨텐츠 기획, 비헤이비어 트리로 유닛 행동 구현</p>
+          <div class="tags"><span class="tag on">시스템 기획</span><span class="tag on">컨텐츠 기획</span><span class="tag">방치형 RPG</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="counterside.html">
+        <div class="cover logo" style="background:#000"><img src="assets/counterside/logo.png" alt="카운터사이드 로고" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2024.08 — 2026.08 · 서비스 종료</span>
+          <h3>카운터사이드</h3>
+          <p>캐릭터 파트 — Lua Script로 플레이어블 캐릭터 7종·레이드 보스 3종 구현, PVP 밸런싱 6종 담당</p>
+          <div class="tags"><span class="tag on">캐릭터 구현</span><span class="tag on">밸런싱</span><span class="tag on">던전 디자인</span><span class="tag">수집형 RPG</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="pearlabyss.html">
+        <div class="cover pic"><img src="assets/pearlabyss/hero.png" alt="붉은사막 키아트" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2024.05 — 2024.06</span>
+          <h3>신작게임디자인 (펄어비스)</h3>
+          <p>자체엔진 스크립트(HFSM)로 PC·몬스터 액션 구현 — 수습 1.5개월</p>
+          <div class="tags"><span class="tag on">액션 구현</span><span class="tag">오픈월드</span><span class="tag">액션 RPG</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="drillme.html">
+        <div class="cover logo" style="background:#fff"><img src="assets/drillme/hero.png" alt="Drill&amp;ME 로고" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2023.10 — 2024.01 · 58일</span>
+          <h3>Drill&amp;ME</h3>
+          <p>드릴로 지하 던전을 공략하는 VR 로그라이트 액션 RPG — 기획팀장, 2개월 내 플레이어블 빌드 완성</p>
+          <div class="tags"><span class="tag on">기획팀장</span><span class="tag on">시스템 기획</span><span class="tag">VR</span><span class="tag">로그라이트</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="dolfense.html">
+        <div class="cover logo" style="background:#fff"><img src="assets/dolfense/hero.png" alt="돌펜스 로고" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2023.10 · 3주</span>
+          <h3>돌펜스: 골렘막기</h3>
+          <p>거대 골렘을 막는 VR 슈터 디펜스 — 기획팀장, 프로그래머 팀과 첫 합을 맞춘 3주 프로젝트</p>
+          <div class="tags"><span class="tag on">기획팀장</span><span class="tag on">밸런싱</span><span class="tag">VR</span><span class="tag">디펜스</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="r2r.html">
+        <div class="cover pic"><img src="assets/r2r/hero.png" alt="Project R2R 대표 이미지" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2023.09 · 15일</span>
+          <h3>Project R2R: Rags to Riches</h3>
+          <p>로블록스 Obby(파쿠르) — Lua Script로 Zone 1 레벨·동적 개체·엔딩 시스템 제작</p>
+          <div class="tags"><span class="tag on">레벨 디자인</span><span class="tag on">동적개체 제작</span><span class="tag">플랫포머</span></div>
+        </div>
+      </a>
+
+      <a class="card" href="print.html">
+        <div class="cover logo" style="background:#fff"><img src="assets/print/hero.png" alt="인쇄저널 제호" loading="lazy"></div>
+        <div class="card-body">
+          <span class="period">2021.04 — 2023.05</span>
+          <h3>인쇄/출판 업계</h3>
+          <p>&lt;월간 인쇄저널&gt; 취재·편집·인쇄·배포 실무 전반 담당</p>
+          <div class="tags"><span class="tag on">출판기획</span><span class="tag on">취재기자</span><span class="tag">非게임업계</span></div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section class="sec" id="docs">
+    <div class="sec-head"><span class="sec-no">02</span><h2>실무 기획서</h2></div>
+
+    <div class="doc-group">
+      <h3><b>카운터사이드</b> — 사이드뷰, 라인 디펜스, 실시간 액션 게임</h3>
+      <div class="doc">
+        <div class="doc-row">
+          <div><p class="doc-title">캐릭터 기획서 — 프론트베이 키이라 보니</p><p class="doc-sub">회피 기반 전열 유지 + 광범위 실명 디버프를 부여하는 근거리 탱커</p></div>
+          <div class="doc-actions"><button class="btn" data-src="https://www.canva.com/design/DAHGo2u2YgA/9nyg6dyWimbyaIgRjBRzhg/view?embed">펼쳐 보기</button><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/design/DAHGo2u2YgA/9nyg6dyWimbyaIgRjBRzhg/view">새 창</a></div>
+        </div>
+        <div class="viewer"></div>
+      </div>
+      <div class="doc">
+        <div class="doc-row">
+          <div><p class="doc-title">캐릭터 기획서 — 히페리온 플랜 타이탄</p><p class="doc-sub">체력이 절반 이하인 유닛에게 추가 피해를 가하는 ‘거대한 공중 요새’ 콘셉트의 원거리 딜러</p></div>
+          <div class="doc-actions"><button class="btn" data-src="https://www.canva.com/design/DAHDVi4oNnQ/0mBt3Pk3EROMWjCPLKq3yg/view?embed">펼쳐 보기</button><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/design/DAHDVi4oNnQ/0mBt3Pk3EROMWjCPLKq3yg/view">새 창</a></div>
+        </div>
+        <div class="viewer"></div>
+      </div>
+    </div>
+
+    <div class="doc-group">
+      <h3><b>Drill&amp;ME</b> — 1인칭 VR 근접 액션 게임 <span style="color:var(--ink-3)">(취업 전 제작)</span></h3>
+      <div class="doc">
+        <div class="doc-row">
+          <div><p class="doc-title">무기 기획서</p><p class="doc-sub">PC가 사용하는 드릴의 외형 · 스탯 · 훅샷 기동을 다룬 무기 시스템</p></div>
+          <div class="doc-actions"><button class="btn" data-src="https://www.canva.com/design/DAF8IJB0brU/Ea7N_aUd4WpbSd0nPhYCMQ/view?embed">펼쳐 보기</button><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/design/DAF8IJB0brU/Ea7N_aUd4WpbSd0nPhYCMQ/view">새 창</a></div>
+        </div>
+        <div class="viewer"></div>
+      </div>
+    </div>
+
+    <div class="doc-group">
+      <h3><b>돌펜스: 골렘막기</b> — 1인칭 VR 슈터 디펜스 게임 <span style="color:var(--ink-3)">(취업 전 제작)</span></h3>
+      <div class="doc">
+        <div class="doc-row">
+          <div><p class="doc-title">화염탄 유닛 기획서</p><p class="doc-sub">투사체가 이리저리 튕겨 나가는 코믹한 디펜스 유닛</p></div>
+          <div class="doc-actions"><button class="btn" data-src="https://www.canva.com/design/DAF8LDW5mq4/mXE5kcVajfSgjU69WF55cg/view?embed">펼쳐 보기</button><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/design/DAF8LDW5mq4/mXE5kcVajfSgjU69WF55cg/view">새 창</a></div>
+        </div>
+        <div class="viewer"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="original">
+    <div class="sec-head"><span class="sec-no">03</span><h2>창작 게임 기획서</h2></div>
+    <div class="doc-group">
+      <h3>던전 탐색 / 전략 시뮬레이션 게임 <b>&lt;배고픈 소녀들 (가제)&gt;</b></h3>
+      <div class="doc">
+        <div class="doc-row">
+          <div><p class="doc-title">제안서</p><p class="doc-sub">제작 의도, 핵심 재미, 장르적 특징 등 서브컬처 게임에 대한 생각을 담았습니다</p></div>
+          <div class="doc-actions"><button class="btn" data-src="https://www.canva.com/design/DAGJBfOReg0/gEGrMjkGH6R3chBnHwFpmQ/view?embed">펼쳐 보기</button><a class="btn" target="_blank" rel="noopener" href="https://www.canva.com/design/DAGJBfOReg0/gEGrMjkGH6R3chBnHwFpmQ/view">새 창</a></div>
+        </div>
+        <div class="viewer"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="wrap">
+  <footer>
+    <span>© 김현택 · 전투 · 캐릭터 기획자</span>
+    <a href="mailto:k_wolf05@naver.com">k_wolf05@naver.com</a>
+  </footer>
+</div>
+
+<script src="js/site.js"></script>
+</body>
 </html>

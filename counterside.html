@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>카운터사이드 — 김현택</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html">KIM HYEONTAEK · PORTFOLIO</a>
+    <a class="back" href="index.html#projects">← 프로젝트 목록</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="banner"><img src="assets/counterside/logo.png" alt="카운터사이드 로고"></div>
+
+  <div class="head">
+    <p class="kicker">STUDIOBSIDE · 2024.08 — 2026.08</p>
+    <h1>스튜디오비사이드 《카운터사이드》</h1>
+    <p class="lead">캐릭터의 애니메이션을 중심으로 액션, 전투 컨셉, 스탯 등 인게임 측면의 디자인을 Lua Script를 이용하여 구현하는 일을 담당했습니다.</p>
+  </div>
+
+  <dl class="facts">
+    <div><dt>소속</dt><dd>기획팀 캐릭터 파트</dd></div>
+    <div><dt>기간</dt><dd>2024.08.12 — 2026.08.26<br><span style="color:var(--ink-3);font-size:13px">서비스 종료</span></dd></div>
+    <div><dt>역할</dt><dd>캐릭터 구현 · 밸런싱 · 던전 디자인</dd></div>
+    <div><dt>사용 툴</dt><dd>Unity · Lua Script · Perforce</dd></div>
+  </dl>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">01</span><h2>프로젝트 설명</h2></div>
+    <div class="two">
+      <div>
+        <h3>사이드뷰 2D 액션, 라인 디펜스, 실시간 PVP 중심 게임</h3>
+        <p>2D 스파인 애니메이션을 기반으로 움직이는 수많은 캐릭터들이 반대편의 적을 향해 나아가 라인을 형성하며 다대다 전투를 합니다. 실시간 PVP인 ‘건틀렛’ 랭킹전을 중심으로 컨텐츠가 소비되며, PVP 환경을 고려하여 캐릭터가 제작됩니다.</p>
+        <h3>수동 배치, 자동 전투</h3>
+        <p>플레이어는 8기의 유닛을 편성해야 하며, 최대 10코스트까지 자연 회복하는 출격자원을 소모하며 유닛을 원하는 타이밍에 출격시킬 수 있습니다. 유닛은 출격 후 정해진 행동패턴에 따라 자동으로 전투합니다.</p>
+      </div>
+      <img class="shot" src="assets/counterside/ingame.png" alt="카운터사이드 인게임 전투 화면" loading="lazy">
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">02</span><h2>플레이어블 캐릭터</h2><span class="sec-note">총 7종 출시 · 최신순</span></div>
+    <div class="chars">
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/ana.jpg" aria-label="세계의 의지 아나필리스 인게임" data-autoplay><source src="assets/counterside/ana.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2026-04-29</span><h3>세계의 의지 아나필리스<span class="last">LAST AWAKENED</span></h3><p>스트라이커에 강하고 디펜더에 약한 원거리 퓨어 딜러. 순간적으로 공중 유닛이 되는 특수 기믹.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/kiira-bonnie.jpg" aria-label="프론트베이 키이라 보니 인게임" data-autoplay><source src="assets/counterside/kiira-bonnie.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2026-02-04</span><h3>프론트베이 키이라 보니</h3><p>회피 기반 전열 유지 + 광범위 실명 디버프를 부여하는 근거리 탱커.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/titan.jpg" aria-label="히페리온 플랜 타이탄 인게임" data-autoplay><source src="assets/counterside/titan.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2025-12-25</span><h3>히페리온 플랜 타이탄</h3><p>체력이 절반 이하인 유닛에게 추가 피해를 가하는 ‘거대한 공중 요새’ 콘셉트의 원거리 딜러.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/caranthir.jpg" aria-label="카란티시르 데 레탈리아 인게임" data-autoplay><source src="assets/counterside/caranthir.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2025-08-06</span><h3>조디악나이츠 레드시프트 카란티시르 데 레탈리아</h3><p>자신과 동등~이하 코스트 유닛 상대로 강점이 두드러지는 근거리 딜탱.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/felicette.jpg" aria-label="스페이스 캣 펠리세트 인게임" data-autoplay><source src="assets/counterside/felicette.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2025-07-23</span><h3>스페이스 캣 펠리세트</h3><p>공중 유닛을 방해하며 치명타 피해 특화 공격을 가하는 원거리 딜러.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/nicole.jpg" aria-label="선봉구마사 니콜 인게임" data-autoplay><source src="assets/counterside/nicole.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2025-03-19</span><h3>선봉구마사 니콜</h3><p>넉백 덱을 보조하는 디버프를 부여하는 원거리 딜러.</p></div></article>
+      <article class="char"><video class="gif" muted loop playsinline preload="none" poster="assets/counterside/seoyoon.jpg" aria-label="프리 에이전트 서윤 인게임" data-autoplay><source src="assets/counterside/seoyoon.mp4" type="video/mp4"></video><div class="char-body"><span class="date">2025-02-12</span><h3>프리 에이전트 서윤</h3><p>특수기 스택을 축적하고, 아군 조건 달성 시 스택을 소모하여 강력한 공격 버프를 제공하는 서포터.</p></div></article>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">03</span><h2>유닛 밸런싱</h2></div>
+    <div class="stats">
+      <div class="stat"><b>5<i>회 이상</i></b><span>2기 이상 동시 밸런스 조정</span></div>
+      <div class="stat"><b>+2 ~ 15<i>%</i></b><span>이전 시즌 대비 사용률 상승</span></div>
+      <div class="stat"><b>6<i>/ 11종</i></b><span>2025년 10월 시즌 상향·리메이크 담당</span></div>
+    </div>
+    <ul class="bul narrow">
+      <li>2025년 10월 신규 시즌에 맞춰 총 11종의 유닛 중 <b>6종을 담당</b>하여 상향 및 리메이크를 진행</li>
+      <li>OP 논란 없이, 커뮤니티에서 <b>현재 파워 인플레이션에 어울리는 성능</b>이라는 평가를 받음</li>
+    </ul>
+    <table class="tbl">
+      <tr><th>캐릭터</th><th>밸런싱 방향</th></tr>
+      <tr><td>이볼브 원</td><td>“메카닉 아군 포식”이라는 컨셉을 유지하되 리스크에 대한 고점을 높여줌</td></tr>
+      <tr><td>네퀴티아</td><td>엘리시움 교향악단 팀업의 아군 유닛들과 시너지를 강화하여 사용감 제고</td></tr>
+      <tr><td>니콜</td><td>‘넉백’ 특화 유닛이라는 유니크한 방향성을 더 뾰족하게 설정</td></tr>
+      <tr><td>모르스</td><td>‘아군 사망 시’ 분노하여 스탯이 강화되는 조건을 ‘모든 유닛’으로 확장</td></tr>
+      <tr><td>카린 웡</td><td>공중 유닛 저격 유닛이라는 유니크한 방향성을 극단적으로 강화하여 직관적인 카운터 유닛으로 티어 재정립</td></tr>
+      <tr><td>하랍</td><td>사디스트라는 컨셉에 맞춰 아군을 타격하며 버프를 부여하는 컨셉으로 변경</td></tr>
+    </table>
+    <figure><img src="assets/counterside/community-evolve-one.png" alt="이볼브 원 밸런싱 후 커뮤니티 반응" loading="lazy"><figcaption>커뮤니티 반응 — 이볼브 원</figcaption></figure>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head"><span class="sec-no">04</span><h2>레이드</h2><span class="sec-note">격전지원 보스 3종 · 누르면 영상 재생</span></div>
+    <div class="vids">
+      <article class="vid"><button class="yt" data-id="M7_cRUi3xmI" data-start="249" style="background-image:url(https://i.ytimg.com/vi/M7_cRUi3xmI/hqdefault.jpg)" aria-label="격전지원 니블 영상 재생"></button><div class="vid-body"><h3>격전지원 니블</h3><p>적이 사망하면 힘을 빼앗아 강해지는 형태의 고난이도 레이드 보스.</p></div></article>
+      <article class="vid"><button class="yt" data-id="0sT4TyHOUcQ" style="background-image:url(https://i.ytimg.com/vi/0sT4TyHOUcQ/hqdefault.jpg)" aria-label="격전지원 세 짐승의 범 영상 재생"></button><div class="vid-body"><h3>격전지원 세 짐승의 범</h3><p>궁극기를 4회 시전하기 전 처치하는 것을 목표로 하는 고난이도 레이드 보스.</p></div></article>
+      <article class="vid"><button class="yt" data-id="gGuG2S05eGc" style="background-image:url(https://i.ytimg.com/vi/gGuG2S05eGc/hqdefault.jpg)" aria-label="격전지원 모르스 영상 재생"></button><div class="vid-body"><h3>격전지원 모르스</h3><p>‘방어 관통률’ 장비를 무력화해 디버퍼 및 추가 장비 세팅을 고려하도록 만든 타임어택형 보스.</p></div></article>
+    </div>
+  </section>
+
+  <nav class="pager"><a href="project-i.html">← 프로젝트 I</a><a href="pearlabyss.html">신작게임디자인 (펄어비스) →</a></nav>
+
+</main>
+
+<script src="js/site.js"></script>
+</body>
+</html>

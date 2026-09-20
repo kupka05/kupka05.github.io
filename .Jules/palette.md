@@ -1,3 +1,0 @@
-## 2024-05-20 - Portfolio Case Study Layout Update
-**Learning:** For portfolios (especially Game Designers), content should not be forced into rigid card layouts. Extensible block-based data schemas parsed by a dynamic component allow for better storytelling (e.g. process wireframes, mechanics breakdowns) without touching UI code. Bright, airy (light mode) designs with generous whitespace ('Ether Portfolio') put focus heavily on the imagery and typography rather than boxes and lines.
-**Action:** Created `ProjectDetail.tsx` capable of rendering different modular blocks. Removed all 1px borders in favor of `surface-container` background color shifts and `ambient-shadows`.
